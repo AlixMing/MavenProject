@@ -6,7 +6,7 @@ import com.jfinal.ext.route.ControllerBind;
 /**
  * IndexController
  */
-@ControllerBind(controllerKey="/",viewPath="/")
+@ControllerBind(controllerKey="/",viewPath="/home")
 public class HomeController extends Controller {
 	public void index() {
 		System.out.println("hello java");
