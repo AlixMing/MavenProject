@@ -8,7 +8,10 @@ import com.jfinal.config.Plugins;
 import com.jfinal.config.Routes;
 import com.jfinal.ext.route.AutoBindRoutes;
 import com.jfinal.kit.PropKit;
+import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
+import com.jfinal.plugin.c3p0.C3p0Plugin;
 import com.jfinal.render.FreeMarkerRender;
+import com.ming.model.User;
 
 /**
  * API引导式配置
@@ -40,14 +43,14 @@ public class SysConfig extends JFinalConfig {
 	 * 配置插件
 	 */
 	public void configPlugin(Plugins me) {
-//		// 配置C3p0数据库连接池插件
-//		C3p0Plugin c3p0Plugin = new C3p0Plugin(PropKit.get("jdbcUrl"), PropKit.get("user"), PropKit.get("password").trim());
-//		me.add(c3p0Plugin);
-//		
-//		// 配置ActiveRecord插件
-//		ActiveRecordPlugin arp = new ActiveRecordPlugin(c3p0Plugin);
-//		me.add(arp);
-//		arp.addMapping("blog", Blog.class);	// 映射blog 表到 Blog模型
+		// 配置C3p0数据库连接池插件
+		C3p0Plugin c3p0Plugin = new C3p0Plugin(PropKit.get("jdbcUrl"), PropKit.get("user"), PropKit.get("password").trim());
+		me.add(c3p0Plugin);
+		
+		// 配置ActiveRecord插件
+		ActiveRecordPlugin arp = new ActiveRecordPlugin(c3p0Plugin);
+		me.add(arp);
+		arp.addMapping("user", User.class);	// 映射blog 表到 Blog模型
 	}
 	
 	/**
