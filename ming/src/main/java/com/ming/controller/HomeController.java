@@ -12,13 +12,13 @@ import com.ming.model.User;
 @ControllerBind(controllerKey="/",viewPath="/home")
 public class HomeController extends Controller {
 	public void index() {
-	    Page<User> userList = User.me.paginate(1, 5); 
-	    System.out.println(userList.getList().size());
-	    setAttr("userList", userList.getList());
 		renderFreeMarker("index.ftl");
 	}
 	
-	public void hello(){
+	public void login(){
+	    Page<User> userList = User.me.paginate(1, 5); 
+	    System.out.println(userList.getList().size());
+	    setAttr("userList", userList.getList());
 	    System.out.println("......");
 	    renderJson(JsonKit.toJson("hello"));
 	}

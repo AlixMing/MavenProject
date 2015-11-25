@@ -11,6 +11,10 @@
     <script type="text/javascript" src="js/jquery.keyboard.extension-typing.js"></script>
     <link type="text/css" href="css/keyboard.css" rel="stylesheet" />
     <script type="text/javascript" src="js/jquery.keyboard.js"></script>
+
+
+    
+
 </head>
 <body id="login">
     <div id="wrappertop">
@@ -18,44 +22,47 @@
     <div id="wrapper">
         <div id="content">
             <div id="header">
-                <h1>LOVE FAMILY</h1>
+                <h1>
+                    <a href="">
+                       <!--Logo <img src="logo.png"   height="50"  width="100"  alt="logo">--></a></h1>
             </div>
             <div id="darkbanner" class="banner320">
-                <h2>Login  System</h2>
+                <h2>
+                    Login  System</h2>
             </div>
             <div id="darkbannerwrap">
             </div>
-            <form name="form" method="post" action="login" id="loginForm">
+            <form name="form" method="post" action="#">
             <fieldset class="form">
                 <p>
-                    <label class="loginlabel" for="user_name">Username:</label>
-                    <input class="logininput ui-keyboard-input ui-widget-content ui-corner-all" 
-                        name="user_name" id="user_name" type="text" value="" />
+                    <label class="loginlabel" for="user_name">
+                        Username:</label>
+                    <input class="logininput ui-keyboard-input ui-widget-content ui-corner-all" name="user_name"
+                        id="user_name" type="text" value="" />
                 </p>
                 <p>
-                    <label class="loginlabel" for="user_password">Password:</label>
+                    <label class="loginlabel" for="user_password">
+                        Password:</label>
                     <span>
-                        <input class="logininput" name="user_password" id="user_password" type="password" />
-                        <img id="passwd" class="tooltip" alt="Click to open the virtual keyboard" title="Click to open the virtual keyboard"
-                            src="images/keyboard.png" />
-                    </span>
+                        <input class="logininput"   name="user_password" id="user_password" type="password" /><img
+                            id="passwd" class="tooltip" alt="Click to open the virtual keyboard" title="Click to open the virtual keyboard"
+                            src="images/keyboard.png" /></span>
                 </p>
                 <button id="loginbtn" type="button" class="positive" name="Submit">
                     <img src="images/key.png" alt="Announcement" />Login</button>
                 <ul id="forgottenpassword">
                     <li class="boldtext">|</li>
                     <li>
-                        <input id="remember" type="checkbox" name="remember" id="rememberMe">
-                        <label for="rememberMe">Remember me</label>
-                    </li>
+                        <input id="remember" type="checkbox" name="remember" id="rememberMe"><label for="rememberMe">Remember
+                            me</label></li>
                 </ul>
             </fieldset>
-            </form>
         </div>
     </div>
     <div id="wrapperbottom_branding">
         <div id="wrapperbottom_branding_text">
-            provide by ming/min</div>
+            Language:<a href="#" style='text-decoration: none'>Japanese </a>| <a href="#" style='text-decoration: none'>
+                English</a></div>
     </div>
     <script type="text/javascript">
         $(document).ready(function() {
@@ -87,13 +94,10 @@
                         return false;
                     }
                 });
-                
                 if (k != 0) return;
-                else $("#loginForm").submit();
-                //loading
-                //ajaxhtml = $("#loginbtn").html();
-                //$("#loginbtn").html("Loading....  <img src='images/loading.gif' alt='Announcement' /> ");
-                //$("#loginbtn").attr("disabled", "disabled");
+                ajaxhtml = $("#loginbtn").html();
+                $("#loginbtn").html("Loading....  <img src='loading.gif' alt='Announcement' /> ");
+                $("#loginbtn").attr("disabled", "disabled");
 
             })
         });
