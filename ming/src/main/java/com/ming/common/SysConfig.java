@@ -57,7 +57,6 @@ public class SysConfig extends JFinalConfig {
 	 * 配置全局拦截器
 	 */
 	public void configInterceptor(Interceptors me) {
-		
 	}
 	
 	/**

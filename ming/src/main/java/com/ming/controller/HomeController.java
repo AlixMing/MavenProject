@@ -7,7 +7,7 @@ import com.jfinal.plugin.activerecord.Page;
 import com.ming.model.User;
 
 /**
- * IndexController
+ * HomeController
  */
 @ControllerBind(controllerKey="/",viewPath="/home")
 public class HomeController extends Controller {
@@ -19,6 +19,7 @@ public class HomeController extends Controller {
 	
 	public void login(){
 	    String name = getPara("user_name");
+
 	    String password = getPara("user_password");
 	    System.out.println("name:" + name);
 	    System.out.println("password:" + password);
